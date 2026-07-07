@@ -1,0 +1,46 @@
+{
+  "name": "meld-crdt",
+  "version": "0.1.0",
+  "description": "A tiny, dependency-free CRDT toolkit for real-time collaboration: a Logoot sequence for text, plus LWW-map, PN-counter and OR-set, with pluggable transport.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "src", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --import tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "crdt",
+    "collaboration",
+    "realtime",
+    "logoot",
+    "rga",
+    "lww",
+    "or-set",
+    "distributed",
+    "eventual-consistency",
+    "offline-first"
+  ],
+  "author": "Akhil",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akhil/meld"
+  }
+}
